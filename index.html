@@ -1,248 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⋆⭒˚.⋆</title>
-    <link rel="icon" type="image/jpg" href="images/3336a903610f1b29cd14aa89afc0f9cc.jpg">
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-image: url('https://i.pinimg.com/736x/53/c5/99/53c599ec2cbbdb237f3704d18e55d205.jpg');
-            background-attachment: fixed;
-            background-size: cover;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            opacity: 0;
-            animation: fadeIn 0.1s forwards;
-            animation-delay: 0.1s;
-        }
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-        #container {
-            width: 1050px; /* Desktop width */
-            background-color: #83a5e0;
-            border: 2px solid #000000;
-            padding: 20px;
-            box-sizing: border-box;
-            opacity: 0;
-            animation: fadeIn 0.1s forwards;
-            animation-delay: 0.1s;
-            transform: scale(0.92); 
-            transform-origin: center; 
-        }
-        header {
-            text-align: center;
-            background-color: #7b9bd2;
-            color: #000000;
-            padding: 10px;
-            font-weight: bold;
-        }
-        .section {
-            border: 1px solid #000000;
-            padding: 10px;
-            margin: 20px 0;
-            background-color: #7b9bd2;
-        }
-        .profile-spotlight {
-            display: flex;
-            justify-content: space-between;
-        }
-        .profile-section, .spotlight-section {
-            width: 45%;
-            text-align: center;
-        }
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border: 2px solid #000000;
-        }
-        .profile-info {
-            margin-top: 10px;
-        }
-        .social-media-ascii {
-            display: flex;
-            justify-content: space-between;
-        }
-        .social-media {
-            text-align: center;
-            width: 60%;
-        }
-        .social-media a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #4a53ff;
-            font-weight: bold;
-        }
-        .ascii-art {
-            text-align: center;
-            width: 30%;
-            border: 1px solid #000000;
-            padding: 10px;
-            background-color: #7b9bd2;
-        }
-        .ascii-art a {
-            font-size: 30px;
-            text-decoration: none;
-            color: #4a53ff;
-            font-weight: bold;
-        }
-        .gallery {
-            margin: 20px 0;
-            text-align: center;
-            height: 400px; 
-            overflow: auto; 
-            border: 2px solid #000000;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-        .gallery h2 {
-            margin-bottom: 10px;
-        }
-        .gallery-images {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-        }
-        .gallery img {
-            width: 100%;
-            height: auto;
-            max-width: 32%;
-            border: 2px solid #000000;
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⋆⭒˚.⋆</title>
+  <link rel="icon" type="image/jpg" href="images/3336a903610f1b29cd14aa89afc0f9cc.jpg">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      background-image: url('https://i.pinimg.com/736x/53/c5/99/53c599ec2cbbdb237f3704d18e55d205.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      opacity: 0;
+      animation: fadeIn 0.3s forwards;
+    }
 
-        @media screen and (max-width: 768px) (max-height: 1300px) {
-            #container {
-                height: 40%;
-                width: 100%; /* Full width on mobile */
-                padding: 10px; /* Reduce padding */
-            }
-            .profile-spotlight {
-                flex-direction: column;
-            }
-            .profile-section, .spotlight-section {
-                width: 100%;
-                margin-bottom: 20px;
-            }
-            .social-media-ascii {
-                flex-direction: column;
-                align-items: center;
-            }
-            .social-media {
-                width: 100%;
-            }
-            .ascii-art {
-                width: 100%;
-                margin-top: 20px;
-            }
-            .gallery-images {
-                flex-direction: column;
-                align-items: center;
-            }
-            .gallery img {
-                max-width: 100%; /* Full width images */
-                margin-bottom: 10px;
-            }
-        }
-    </style>
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    #container {
+      width: 90%;
+      max-width: 1050px;
+      background-color: #83a5e0;
+      border: 2px solid #000;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    header {
+      text-align: center;
+      background-color: #7b9bd2;
+      color: #000;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    .section {
+      border: 1px solid #000;
+      padding: 10px;
+      margin: 20px 0;
+      background-color: #7b9bd2;
+    }
+
+    .profile-spotlight {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .profile-section,
+    .spotlight-section {
+      flex: 1 1 45%;
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border: 2px solid #000;
+    }
+
+    .profile-info {
+      margin-top: 10px;
+    }
+
+    .social-media-ascii {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .social-media {
+      flex: 1 1 60%;
+      text-align: center;
+    }
+
+    .social-media a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #4a53ff;
+      font-weight: bold;
+      word-wrap: break-word;
+    }
+
+    .ascii-art {
+      flex: 1 1 30%;
+      text-align: center;
+      border: 1px solid #000;
+      padding: 10px;
+      background-color: #7b9bd2;
+    }
+
+    .ascii-art a {
+      font-size: 30px;
+      text-decoration: none;
+      color: #4a53ff;
+      font-weight: bold;
+    }
+
+    .gallery {
+      margin: 20px 0;
+      text-align: center;
+      border: 2px solid #000;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .gallery-images {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      max-width: 32%;
+      border: 2px solid #000;
+      box-sizing: border-box;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      #container {
+        width: 100%;
+        padding: 15px;
+      }
+
+      .profile-spotlight {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .profile-section,
+      .spotlight-section {
+        width: 100%;
+        flex: none;
+      }
+
+      .social-media-ascii {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .social-media,
+      .ascii-art {
+        width: 100%;
+      }
+
+      .gallery-images {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .gallery img {
+        max-width: 100%;
+      }
+
+      iframe {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        height: auto;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div id="container">
-        <header>
-            <h1>ZOMBIES GO TO HEAVEN ⋆⭒˚.⋆</h1>
-        </header>
-        <div class="section profile-spotlight">
-            <div class="profile-section">
-                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR4GjS7WjWAYcopPYB61uaV9-VJkCoy8wwIbDfzxGUcT7Gk9QiG" alt="Profile Picture" class="profile-pic">
-                <div class="profile-info">
-                    <h2>about me ૮ - ﻌ • ა</h2>
-                    <p>name: wassim <br>
-                    age: 19 <br>
-                <br>
-                hi! i'm wassim! i am a british/algerian visual artist and filmmaker :DD <br> <br>i make music videos, visualisers, and short films. also an amateur guitar player. here u can find my full portfolio, along with some extra stuff like my socials :3</p>
-                </div>
-            </div>
-            <div class="spotlight-section">
-                <h2>most recent work :></h2>
-                <p>hey plz go check this out :D</p>
-                <iframe width="100%" height="250" src="https://www.youtube.com/embed/SCnWPXLBtg4?si=hEX8ziKz9PvbW8f8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
+  <div id="container">
+    <header>
+      <h1>ZOMBIES GO TO HEAVEN ⋆⭒˚.⋆</h1>
+    </header>
+
+    <div class="section profile-spotlight">
+      <div class="profile-section">
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR4GjS7WjWAYcopPYB61uaV9-VJkCoy8wwIbDfzxGUcT7Gk9QiG" alt="Profile Picture" class="profile-pic">
+        <div class="profile-info">
+          <h2>about me ૮ - ﻌ • ა</h2>
+          <p>
+            name: wassim <br>
+            age: 19 <br><br>
+            hi! i'm wassim! i am a british/algerian visual artist and filmmaker :DD <br><br>
+            i make music videos, visualisers, and short films. also an amateur guitar player.
+            here u can find my full portfolio, along with some extra stuff like my socials :3
+          </p>
         </div>
-        <div class="section social-media-ascii">
-            <div class="social-media">
-                <h2>socials ʚɞ ⁺˖ ⸝⸝</h2>
-                <a href="https://www.youtube.com/@wpssim" target="_blank">youtube</a>
-                <a href="https://x.com/wpssim" target="_blank">twitter</a>
-                <a href="https://www.instagram.com/wpssim/" target="_blank">instagram</a>
-                <a href="https://www.tiktok.com/@buginsoul" target="_blank">tiktok</a>
-                <br> <a href="http://artistsagainstgenocide.org" target="_blank">FUNDRAISING DONATIONS</a>
-                <br> <br>email: camden@friendlycritter.art
-            </div>
-            <div class="ascii-art">
-                <p>૮˶• ﻌ •˶ა<br>
-                ./づ~ ♡</p>
-                <a href="portfolio.html"><b>PORTFOLIO</b></a>
-            </div>
-        </div>
-        <div class="section gallery">
-            <h2>gallery 𖤐⭒⋆｡⋆⭒𖤐</h2>
-            <div class="gallery-images">
-                <img src="images/aldn.png" alt="aldn">
-                <img src="images/2muchpressure.png" alt="julia wolf - 2muchpressure">
-                <img src="images/ericdoa.png" alt="ericdoa">
-            </div>
-            <div class="gallery-images">
-                <img src="images/zombiesgotoheaven.jpg" alt="Zombies Go to Heaven">
-                <img src="images/linoleum.jpg" alt="Linoleum">
-                <img src="images/to see the next part of the dream.jpg" alt="To See the Next Part of the Dream">
-            </div>
-            <div class="gallery-images">
-                <img src="images/syzy.jpg" alt="Syzy">
-                <img src="images/angelus.jpg" alt="Angelus">
-                <img src="images/gl0wrm.jpg" alt="gl0wrm">
-            </div>
-            <div class="gallery-images">
-                <img src="images/adam.jpg" alt="adam">
-                <img src="images/tyler.png" alt="tyler">
-                <img src="images/catgif.jpg" alt="catgif">
-            </div>
-            <div class="gallery-images">
-                <img src="images/xaybee.jpg" alt="xaybee">
-                <img src="images/zjay.jpg" alt="zjay">
-                <img src="images/ray.jpg" alt="ray">
-            </div>
-            <div class="gallery-images">
-                <img src="images/lost.jpg" alt="lost and found">
-                <img src="images/cybertrash.png" alt="cybertrash">
-                <img src="images/kmoe.png" alt="kmoe">
-            </div>
-            <div class="gallery-images">
-                <img src="images/post.png" alt="poster girl">
-                <img src="images/hearteater.png" alt="hearteater">
-                <img src="images/glaive2.png" alt="glaive">
-            </div>
-            <div class="gallery-images">
-                <img src="images/delta.png" alt="delta">
-                <img src="images/megatron.png" alt="megatron">
-            </div>
-            <br>
-            <br>
-        </div>
-        <footer>
-            &copy; friendlycritter.art
-        </footer>
+      </div>
+
+      <div class="spotlight-section">
+        <h2>most recent work :></h2>
+        <p>hey plz go check this out :D</p>
+        <iframe src="https://www.youtube.com/embed/SCnWPXLBtg4?si=hEX8ziKz9PvbW8f8" title="YouTube video player" allowfullscreen></iframe>
+      </div>
     </div>
+
+    <div class="section social-media-ascii">
+      <div class="social-media">
+        <h2>socials ʚɞ ⁺˖ ⸝⸝</h2>
+        <a href="https://www.youtube.com/@wpssim" target="_blank">youtube</a>
+        <a href="https://x.com/wpssim" target="_blank">twitter</a>
+        <a href="https://www.instagram.com/wpssim/" target="_blank">instagram</a>
+        <a href="https://www.tiktok.com/@buginsoul" target="_blank">tiktok</a>
+        <br><a href="http://artistsagainstgenocide.org" target="_blank">FUNDRAISING DONATIONS</a>
+        <br><br>email: camden@friendlycritter.art
+      </div>
+
+      <div class="ascii-art">
+        <p>૮˶• ﻌ •˶ა<br>./づ~ ♡</p>
+        <a href="portfolio.html"><b>PORTFOLIO</b></a>
+      </div>
+    </div>
+
+    <div class="section gallery">
+      <h2>gallery 𖤐⭒⋆｡⋆⭒𖤐</h2>
+      
+      <div class="gallery-images">
+        <img src="images/aldn.png" alt="aldn">
+        <img src="images/2muchpressure.png" alt="julia wolf - 2muchpressure">
+        <img src="images/ericdoa.png" alt="ericdoa">
+      </div>
+      <div class="gallery-images">
+        <img src="images/zombiesgotoheaven.jpg" alt="Zombies Go to Heaven">
+        <img src="images/linoleum.jpg" alt="Linoleum">
+        <img src="images/to see the next part of the dream.jpg" alt="To See the Next Part of the Dream">
+      </div>
+      <div class="gallery-images">
+        <img src="images/syzy.jpg" alt="Syzy">
+        <img src="images/angelus.jpg" alt="Angelus">
+        <img src="images/gl0wrm.jpg" alt="gl0wrm">
+      </div>
+      <div class="gallery-images">
+        <img src="images/adam.jpg" alt="adam">
+        <img src="images/tyler.png" alt="tyler">
+        <img src="images/catgif.jpg" alt="catgif">
+      </div>
+      <div class="gallery-images">
+        <img src="images/xaybee.jpg" alt="xaybee">
+        <img src="images/zjay.jpg" alt="zjay">
+        <img src="images/ray.jpg" alt="ray">
+      </div>
+      <div class="gallery-images">
+        <img src="images/lost.jpg" alt="lost and found">
+        <img src="images/cybertrash.png" alt="cybertrash">
+        <img src="images/kmoe.png" alt="kmoe">
+      </div>
+      <div class="gallery-images">
+        <img src="images/post.png" alt="poster girl">
+        <img src="images/hearteater.png" alt="hearteater">
+        <img src="images/glaive2.png" alt="glaive">
+      </div>
+      <div class="gallery-images">
+        <img src="images/delta.png" alt="delta">
+        <img src="images/megatron.png" alt="megatron">
+      </div>
+    </div>
+
+    <footer>&copy; friendlycritter.art</footer>
+  </div>
 </body>
 </html>
