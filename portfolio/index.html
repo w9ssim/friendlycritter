@@ -3,13 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/webp" href="images/3336a903610f1b29cd14aa89afc0f9cc.webp">
 <title>Portfolio</title>
 
+<link rel="icon" type="image/webp" href="images/3336a903610f1b29cd14aa89afc0f9cc.webp">
 <link rel="icon" type="image/jpg" href="images/3336a903610f1b29cd14aa89afc0f9cc.jpg">
-<link rel="preconnect" href="https://www.youtube.com">
-<link rel="preconnect" href="https://i.ytimg.com">
-<link rel="preconnect" href="https://www.instagram.com">
 
 <style>
 html { scroll-behavior: smooth; }
@@ -28,13 +25,6 @@ body {
     animation: fadeIn 0.3s forwards;
 }
 @keyframes fadeIn { to { opacity: 1; } }
-
-.video-caption {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #000;
-    margin-top: 5px;
-}
 
 #container {
     width: 90%;
@@ -68,11 +58,16 @@ header {
     justify-content: space-between;
 }
 
+.video-item {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 calc(50% - 20px);
+}
+
 .video-thumb {
     position: relative;
     cursor: pointer;
     background: #000;
-    flex: 1 1 calc(50% - 20px);
     aspect-ratio: 16 / 9;
     overflow: hidden;
 }
@@ -109,6 +104,13 @@ header {
     display: block;
 }
 
+.video-caption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #000;
+    margin-top: 5px;
+}
+
 .instagram-embed {
     flex: 1 1 calc(50% - 20px);
     aspect-ratio: 1 / 1;
@@ -125,7 +127,7 @@ header {
     body { align-items: flex-start; padding: 10px 0; background-attachment: scroll; }
     #container { width: 100%; height: auto; padding: 10px; margin: 20px 0; border-width: 1px; }
     .video-container { flex-direction: column; gap: 15px; }
-    .video-thumb { flex: 1 1 100%; }
+    .video-item { flex: 1 1 100%; }
     .instagram-embed { flex: 1 1 100%; }
     .section { margin: 10px 0; }
 }
@@ -138,50 +140,50 @@ header {
     
     <div class="section">
         <h2>client work ✦</h2>
-        <div class="video-container full-width-video">
-            <div class="video-thumb" data-id="d2ieE_A0sig">
-                <img src="https://img.youtube.com/vi/d2ieE_A0sig/hqdefault.jpg" alt="Video Thumbnail">
-                <button>▶</button>
-                <p class="video-caption">
-                    Julia Wolf - Last Summer
-                    <br> Editor/VFX Artist (After Effects)
-                </p>
-            </div>
-        </div>
-
-        <br>
-
         <div class="video-container">
-            <div class="video-thumb" data-id="XeSTwjLBc_k">
-                <img src="https://img.youtube.com/vi/XeSTwjLBc_k/hqdefault.jpg" alt="Video Thumbnail">
-                <button>▶</button>
-                <p class="video-caption">
-                    Minh - Gemini [Directed By NX2Photography]
-                    <br> VFX/Mixed Media (DaVinci Resolve)
-                </p>
+
+            <div class="video-item">
+                <div class="video-thumb" data-id="XeSTwjLBc_k">
+                    <img src="https://img.youtube.com/vi/XeSTwjLBc_k/hqdefault.jpg" alt="Video Thumbnail">
+                    <button>▶</button>
+                </div>
+                <p class="video-caption">Minh - Gemini [Directed By NX2Photography]<br>VFX/Mixed Media (DaVinci Resolve)</p>
             </div>
-            <div class="video-thumb" data-id="SCnWPXLBtg4">
-                <img src="https://img.youtube.com/vi/SCnWPXLBtg4/hqdefault.jpg" alt="Video Thumbnail">
-                <button>▶</button>
-                <p class="video-caption">
-                    Overtonight - Summer '22 [Directed by NX2Photography]
-                    <br> VFX/Mixed Media (DaVinci Resolve)
-                </p>
+
+            <div class="video-item">
+                <div class="video-thumb" data-id="SCnWPXLBtg4">
+                    <img src="https://img.youtube.com/vi/SCnWPXLBtg4/hqdefault.jpg" alt="Video Thumbnail">
+                    <button>▶</button>
+                </div>
+                <p class="video-caption">Overtonight - Summer '22 [Directed by NX2Photography]<br>VFX/Mixed Media (DaVinci Resolve)</p>
             </div>
-            <div class="video-thumb" data-id="cKSayjL4vqY">
-                <img src="https://img.youtube.com/vi/cKSayjL4vqY/hqdefault.jpg" alt="Video Thumbnail">
-                <button>▶</button>
-                <p class="video-caption">
-                    Mercyyy - Comedy
-                    <br> Lead Editor/VFX (Datamosh 2, After Effects, Blender)
-                </p>
+
+             <div class="video-item">
+                <div class="video-thumb" data-id="d2ieE_A0sig">
+                    <img src="https://img.youtube.com/vi/d2ieE_A0sig/hqdefault.jpg" alt="Video Thumbnail">
+                    <button>▶</button>
+                </div>
+                <p class="video-caption">Julia Wolf - Last Summer<br>Editor/VFX Artist (After Effects)</p>
             </div>
-            <div class="video-thumb" data-id="14ZFh-SFIrU">
-                <img src="https://img.youtube.com/vi/14ZFh-SFIrU/hqdefault.jpg" alt="Video Thumbnail">
-                <button>▶</button>
-                <p class="video-caption">
-                    Attic - MerkMusik
-                    <br> Director, Lead Editor/VFX (After Effects)
+
+            <div class="video-item">
+                <div class="video-thumb" data-id="cKSayjL4vqY">
+                    <img src="https://img.youtube.com/vi/cKSayjL4vqY/hqdefault.jpg" alt="Video Thumbnail">
+                    <button>▶</button>
+                </div>
+                <p class="video-caption">Mercyyy - Comedy<br>Lead Editor/VFX (Datamosh 2, After Effects, Blender)</p>
+            </div>
+            <div class="video-item">
+                <div class="video-thumb" data-id="p0x7S-kqm9k">
+                    <img src="https://img.youtube.com/vi/p0x7S-kqm9k/hqdefault.jpg" alt="Video Thumbnail"> <button></button>
+                </div>
+                <p class="video-caption"> Spirits - C4 <br> 3D Animation/Lighting/Camera/VFX (Maya, Blender) </p>
+                </div>
+            <div class="video-item">
+                <div class="video-thumb" data-id="t5Bk_3xPrOE">
+                    <img src="https://img.youtube.com/vi/t5Bk_3xPrOE/hqdefault.jpg" alt="Video Thumbnail"> <button></button>
+                </div>
+                <p class="video-caption"> Spirits - My Head Rings From the Sirens <br> 3D Animation/Lighting/Camera/VFX (Maya, Blender) </p>
             </div>
         </div>
 
@@ -194,29 +196,32 @@ header {
     <div class="section">
         <h2>personal projects ☁︎</h2>
         <div class="video-container">
-            <div class="video-thumb" data-id="BtTgIKe6oH4">
-                <img src="https://img.youtube.com/vi/BtTgIKe6oH4/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
-                <p class="video-caption">
-                    Setting Sail - A Short Film by Wassim*
-                    <br> Director/Actor/Storyboard/Editor/Grading (DaVinci Resolve, Premiere Pro, Blender, After Effects)
+            <div class="video-item">
+                <div class="video-thumb" data-id="BtTgIKe6oH4">
+                    <img src="https://img.youtube.com/vi/BtTgIKe6oH4/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
+                </div>
+                <p class="video-caption">Setting Sail - A Short Film by Wassim*<br>Director/Actor/Storyboard/Editor/Grading (DaVinci Resolve, Premiere Pro, Blender, After Effects)</p>
             </div>
-            <div class="video-thumb" data-id="Odq5tLtPDXk">
-                <img src="https://img.youtube.com/vi/Odq5tLtPDXk/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
-                <p class="video-caption">
-                    Sixteen - A Short Film by Wassim*
-                    <br> Director/Actor/Editor/Grading (Premiere Pro)
+
+            <div class="video-item">
+                <div class="video-thumb" data-id="Odq5tLtPDXk">
+                    <img src="https://img.youtube.com/vi/Odq5tLtPDXk/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
+                </div>
+                <p class="video-caption">Sixteen - A Short Film by Wassim*<br>Director/Actor/Editor/Grading (Premiere Pro)</p>
             </div>
-            <div class="video-thumb" data-id="kTOCtqsrNJg">
-                <img src="https://img.youtube.com/vi/kTOCtqsrNJg/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
-                <p class="video-caption">
-                    Ending - A Short Film by Wassim*
-                    <br> Storyboard/Director/Actor/Editor/Sound Design/Compositing (After Effects, Nuke, DaVinci Resolve)
+
+            <div class="video-item">
+                <div class="video-thumb" data-id="kTOCtqsrNJg">
+                    <img src="https://img.youtube.com/vi/kTOCtqsrNJg/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
+                </div>
+                <p class="video-caption">Ending - A Short Film by Wassim*<br>Storyboard/Director/Actor/Editor/Sound Design/Compositing (After Effects, Nuke, DaVinci Resolve)</p>
             </div>
-            <div class="video-thumb" data-id="Jpbkw4Jb3UE">
-                <img src="https://img.youtube.com/vi/Jpbkw4Jb3UE/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
-                <p class="video-caption">
-                    University Storyboard Project
-                    <br> Storyboard/Sound Design/Editor/VFX (After Effects, FL Studio, Logic Pro, Nuke)
+
+            <div class="video-item">
+                <div class="video-thumb" data-id="Jpbkw4Jb3UE">
+                    <img src="https://img.youtube.com/vi/Jpbkw4Jb3UE/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
+                </div>
+                <p class="video-caption">University Storyboard Project<br>Storyboard/Sound Design/Editor/VFX (After Effects, FL Studio, Logic Pro, Nuke)</p>
             </div>
         </div>
     </div>
@@ -224,23 +229,18 @@ header {
     <div class="section">
         <h2>practice ♡</h2>
         <div class="video-container">
-            <div class="video-thumb" data-id="jU_VXxyQY9s">
-                <img src="https://img.youtube.com/vi/jU_VXxyQY9s/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
+            <div class="video-item">
+                <div class="video-thumb" data-id="jU_VXxyQY9s">
+                    <img src="https://img.youtube.com/vi/jU_VXxyQY9s/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
+                </div>
+                <p class="video-caption">Mixed Media Practice 1</p>
             </div>
-            <div class="video-thumb" data-id="fQbPsBAEP34">
-                <img src="https://img.youtube.com/vi/fQbPsBAEP34/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
+            <div class="video-item">
+                <div class="video-thumb" data-id="fQbPsBAEP34">
+                    <img src="https://img.youtube.com/vi/fQbPsBAEP34/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
+                </div>
+                <p class="video-caption">Mixed Media Practice 2</p>
             </div>
-            <div class="video-thumb" data-id="unV6iwVE0Q4">
-                <img src="https://img.youtube.com/vi/unV6iwVE0Q4/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
-            </div>
-            <div class="video-thumb" data-id="dmNck1R0pOY">
-                <img src="https://img.youtube.com/vi/dmNck1R0pOY/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
-            </div>
-            <div class="video-thumb" data-id="wZRUUuK1sow">
-                <img src="https://img.youtube.com/vi/wZRUUuK1sow/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
-            </div>
-            <div class="video-thumb" data-id="W0MfcbnqJ6c">
-                <img src="https://img.youtube.com/vi/W0MfcbnqJ6c/hqdefault.jpg" alt="Video Thumbnail"><button></button>
             </div>
         </div>
     </div>
