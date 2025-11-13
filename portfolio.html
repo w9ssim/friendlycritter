@@ -102,7 +102,15 @@ header {
 }
 
 .instagram-embed {
-    flex: 1 1 100%;
+    flex: 1 1 calc(50% - 20px);
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.instagram-embed blockquote {
+    width: 100% !important;
+    height: 100% !important;
 }
 
 @media screen and (max-width: 768px) {
@@ -110,6 +118,7 @@ header {
     #container { width: 100%; height: auto; padding: 10px; margin: 20px 0; border-width: 1px; }
     .video-container { flex-direction: column; gap: 15px; }
     .video-thumb { flex: 1 1 100%; }
+    .instagram-embed { flex: 1 1 100%; }
     .section { margin: 10px 0; }
 }
 </style>
