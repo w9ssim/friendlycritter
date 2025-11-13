@@ -107,7 +107,6 @@
       font-weight: bold;
     }
 
-    /* === Fixed Gallery Layout === */
     .gallery {
       margin: 20px 0;
       text-align: center;
@@ -129,26 +128,26 @@
       margin-bottom: 10px;
     }
 
-    .gallery-images a,
-    .gallery-images img {
-      width: calc(33.333% - 7px);
+    .gallery-images > * {
+      flex: 1 1 calc(33.333% - 10px);
       box-sizing: border-box;
       display: block;
       border: 2px solid #000;
-      transition: transform 0.2s ease-in-out;
+      overflow: hidden;
     }
 
-    .gallery-images a img,
     .gallery-images img {
       width: 100%;
       height: auto;
       display: block;
+      transition: transform 0.2s ease-in-out;
     }
 
     .gallery-images a:hover img,
     .gallery-images img:hover {
       transform: scale(1.03);
     }
+
 
     footer {
       text-align: center;
