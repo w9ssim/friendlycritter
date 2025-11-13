@@ -107,6 +107,7 @@
       font-weight: bold;
     }
 
+    /* === Fixed Gallery Layout === */
     .gallery {
       margin: 20px 0;
       text-align: center;
@@ -123,16 +124,16 @@
     .gallery-images {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-between;
       gap: 10px;
       margin-bottom: 10px;
     }
 
     .gallery-images a,
     .gallery-images img {
-      flex: 1 1 calc(33.333% - 10px);
+      width: calc(33.333% - 7px);
       box-sizing: border-box;
-      display: inline-block;
+      display: block;
       border: 2px solid #000;
       transition: transform 0.2s ease-in-out;
     }
@@ -161,8 +162,8 @@
       .profile-section, .spotlight-section { width: 100%; flex: none; }
       .social-media-ascii { flex-direction: column; align-items: center; }
       .social-media, .ascii-art { width: 100%; }
-      .gallery-images { flex-direction: column; align-items: center; }
-      .gallery-images a, .gallery-images img { flex: none; width: 100%; }
+      .gallery-images { flex-direction: column; align-items: center; gap: 15px; }
+      .gallery-images a, .gallery-images img { width: 100%; }
       iframe { width: 100%; aspect-ratio: 16 / 9; height: auto; }
     }
   </style>
