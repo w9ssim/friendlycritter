@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wassim difallah ⋆⭒˚.⋆ | Organisations / Projects</title>
+  <link rel="icon" type="image/jpg" href="images/3336a903610f1b29cd14aa89afc0f9cc.jpg">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      background-image: url('https://i.pinimg.com/736x/53/c5/99/53c599ec2cbbdb237f3704d18e55d205.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      opacity: 0;
+      animation: fadeIn 0.3s forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 25px;
+      max-width: 1300px;
+      width: 100%;
+    }
+
+    #sidebar {
+      width: 220px;
+      background: rgba(123, 155, 210, 0.65);
+      border: 2px solid rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+      position: sticky;
+      top: 20px;
+      height: fit-content;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #sidebar:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    }
+
+    #sidebar h3 {
+      margin-top: 0;
+      font-size: 18px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    #sidebar a {
+      display: block;
+      margin: 10px 0;
+      text-decoration: none;
+      color: #4a53ff;
+      font-weight: bold;
+      transition: color 0.2s ease, text-shadow 0.2s ease;
+    }
+
+    #sidebar a:hover {
+      color: #2f36ff;
+      text-shadow: 0 0 6px rgba(74, 83, 255, 0.6);
+    }
+
+    #container a {
+      text-decoration: none;
+      color: #4a53ff;
+      font-weight: bold;
+      transition: color 0.2s ease, text-shadow 0.2s ease;
+    }
+
+    #container a:hover {
+      color: #2f36ff;
+      text-shadow: 0 0 6px rgba(74, 83, 255, 0.6);
+    }
+
+    .update-board {
+      margin-top: 20px;
+      background: rgba(131, 165, 224, 0.55);
+      border: 1px solid #000;
+      padding: 10px;
+      text-align: left;
+      font-size: 14px;
+      backdrop-filter: blur(6px);
+      color: #000;
+    }
+
+    .update-board h4 {
+      margin-top: 0;
+      font-size: 16px;
+      text-align: center;
+      border-bottom: 1px solid #000;
+      padding-bottom: 5px;
+    }
+
+    #container {
+      flex: 1;
+      max-width: 1050px;
+      background: rgba(131, 165, 224, 0.7);
+      border: 2px solid rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      box-sizing: border-box;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(10px);
+    }
+
+    header {
+      text-align: center;
+      background-color: rgba(123, 155, 210, 0.8);
+      color: #000;
+      padding: 10px;
+      font-weight: bold;
+      border: 1px solid #000;
+      margin-bottom: 20px;
+    }
+
+    .project {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background-color: rgba(123, 155, 210, 0.8);
+      border: 1px solid #000;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 25px;
+    }
+
+    .project img {
+      width: 160px;
+      height: auto;
+      border-radius: 5px;
+      object-fit: contain;
+    }
+
+    .project-content {
+      flex: 1;
+    }
+
+    .project-content h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #000;
+    }
+
+    .project-content p {
+      color: #000;
+      line-height: 1.6;
+    }
+
+    .separator {
+      text-align: center;
+      margin: 50px 0 30px;
+      font-size: 32px;
+      font-weight: bold;
+      color: #000;
+      position: relative;
+    }
+
+    .separator::before,
+    .separator::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      opacity: 0.3;
+      margin: 15px 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #000;
+    }
+
+    @media screen and (max-width: 768px) {
+      body { padding: 10px; }
+      .page-wrapper { flex-direction: column; align-items: center; }
+      #sidebar { width: 100%; position: static; }
+      #container { width: 100%; padding: 15px; }
+      .project { flex-direction: column; align-items: center; text-align: center; }
+      .project img { width: 70%; max-width: 250px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <nav id="sidebar">
+      <h3>✶ Menu ✶</h3>
+      <a href="https://friendlycritter.art/">Home</a>
+      <a href="/portfolio/">Portfolio</a>
+      <a href="/projects/">Organisations/Projects</a>
+      <a href="/blogs/">Blog</a>
+
+      <div class="update-board">
+        <h4>Website Update Board</h4>
+        <p><b>Nov 2025:</b> Added Organisations/Projects page 💫</p>
+      </div>
+    </nav>
+
+    <div id="container">
+      <header>
+        <h1>⋆.˚⭒⋆ Organisations / Projects ⋆⭒˚.⋆</h1>
+      </header>
+
+      <div class="project">
+        <img src="images/static.png" alt="STATIC">
+        <div class="project-content">
+          <h2>STATIC (@CUT2STATIC)</h2>
+          <p>
+            I joined and helped found a multimedia page called <b>Static</b>, where we host music and art related events, such as online music
+            festivals (referred to as URLFests), interviews (such as <a href="https://www.youtube.com/watch?v=gx5S5r3sMTo&t=5s" target="_blank"> this one!</a>), and
+            cover art contests. I play a role as an Organiser, Graphic Designer, Animator and VFX Artist, producing overlays, graphics and editing livestreams.
+            <br><br>
+            <b>Social Media:</b>
+            <br>
+            <a href="https://www.instagram.com/cut2static/" target="_blank">Instagram</a>
+            <br>
+            <a href="https://www.youtube.com/@cut2static" target="_blank">YouTube</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="images/seventhchapter.jpg" alt="seventhchapter">
+        <div class="project-content">
+          <h2>SEVENTHCHAPTER (@SEVENTHCHAPTER.WORLD)</h2>
+          <p>
+            This was my first attempt at a visual arts collective. I produced visualisers for artists, focusing a lot on digital distortion of
+            videos, 3D models and images. The vision was primarily focused on an older, grungier, more pixellated artstyle, and is one that
+            continues to influence me to this day. I left the project after about a year, as I felt a lot more confident to turn my work into
+            a personal brand after receiving praise from my peers.
+          </p>
+        </div>
+      </div>
+
+      <div class="separator">OTHER</div>
+
+      <div class="project">
+        <img src="images/artistsagainstgenocide.png" alt="artistsagainstgenocide">
+        <div class="project-content">
+          <h2>Artists Against Genocide (@artistsagainstg3nocide)</h2>
+          <p>
+            Founder and lead creator for <b>Artists Against Genocide,</b> a non-profit focused on providing fundraising and aid to displaced families in Gaza, Sudan and Congo. 
+            I produce videos, graphics, and manage the <a href="https://www.instagram.com/artistsagainstg3nocide/" target="_blank">Instagram</a> and <a href="https://www.tiktok.com/@artistsagainst" target="_blank">Tiktok</a> to garner attention and donations for families, as well as working in tangent with Gaza Soup Kitchen, 
+            Operation Olive Branch, and Project HOPE. We have raised roughly $20,000 as of November 2025.
+          </p>
+        </div>
+      </div>
+
+      <footer>&copy; friendlycritter.art</footer>
+    </div>
+  </div>
+</body>
+</html>
