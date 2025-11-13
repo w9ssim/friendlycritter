@@ -9,7 +9,7 @@
     body {
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
       min-height: 100vh;
       background-image: url('https://i.pinimg.com/736x/53/c5/99/53c599ec2cbbdb237f3704d18e55d205.jpg');
       background-attachment: fixed;
@@ -25,28 +25,100 @@
       to { opacity: 1; }
     }
 
-    #container {
-      width: 90%;
-      max-width: 1050px;
-      background-color: #83a5e0;
-      border: 2px solid #000;
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 25px;
+      max-width: 1300px;
+      width: 100%;
+    }
+
+    #sidebar {
+      width: 220px;
+      background: rgba(123, 155, 210, 0.65);
+      border: 2px solid rgba(0, 0, 0, 0.6);
       padding: 20px;
       box-sizing: border-box;
+      text-align: center;
+      position: sticky;
+      top: 20px;
+      height: fit-content;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #sidebar:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    }
+
+    #sidebar h3 {
+      margin-top: 0;
+      font-size: 18px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    #sidebar a {
+      display: block;
+      margin: 10px 0;
+      text-decoration: none;
+      color: #4a53ff;
+      font-weight: bold;
+      transition: color 0.2s ease, text-shadow 0.2s ease;
+    }
+
+    #sidebar a:hover {
+      color: #2f36ff;
+      text-shadow: 0 0 6px rgba(74, 83, 255, 0.6);
+    }
+
+    .update-board {
+      margin-top: 20px;
+      background: rgba(131, 165, 224, 0.55);
+      border: 1px solid #000;
+      padding: 10px;
+      text-align: left;
+      font-size: 14px;
+      backdrop-filter: blur(6px);
+      color: #000;
+    }
+
+    .update-board h4 {
+      margin-top: 0;
+      font-size: 16px;
+      text-align: center;
+      border-bottom: 1px solid #000;
+      padding-bottom: 5px;
+    }
+
+    #container {
+      flex: 1;
+      max-width: 1050px;
+      background: rgba(131, 165, 224, 0.7);
+      border: 2px solid rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      box-sizing: border-box;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(10px);
     }
 
     header {
       text-align: center;
-      background-color: #7b9bd2;
+      background-color: rgba(123, 155, 210, 0.8);
       color: #000;
       padding: 10px;
       font-weight: bold;
+      border: 1px solid #000;
     }
 
     .section {
       border: 1px solid #000;
       padding: 10px;
       margin: 20px 0;
-      background-color: #7b9bd2;
+      background-color: rgba(123, 155, 210, 0.8);
     }
 
     .profile-spotlight {
@@ -66,6 +138,7 @@
       width: 150px;
       height: 150px;
       border: 2px solid #000;
+      border-radius: 50%;
     }
 
     .profile-info {
@@ -90,6 +163,11 @@
       color: #4a53ff;
       font-weight: bold;
       word-wrap: break-word;
+      transition: text-shadow 0.2s ease;
+    }
+
+    .social-media a:hover {
+      text-shadow: 0 0 6px rgba(74, 83, 255, 0.6);
     }
 
     .ascii-art {
@@ -97,7 +175,7 @@
       text-align: center;
       border: 1px solid #000;
       padding: 10px;
-      background-color: #7b9bd2;
+      background-color: rgba(123, 155, 210, 0.8);
     }
 
     .ascii-art a {
@@ -105,6 +183,11 @@
       text-decoration: none;
       color: #4a53ff;
       font-weight: bold;
+      transition: text-shadow 0.2s ease;
+    }
+
+    .ascii-art a:hover {
+      text-shadow: 0 0 6px rgba(74, 83, 255, 0.6);
     }
 
     .gallery {
@@ -113,6 +196,7 @@
       border: 2px solid #000;
       padding: 10px;
       box-sizing: border-box;
+      background-color: rgba(123, 155, 210, 0.8);
     }
 
     .gallery p {
@@ -148,7 +232,6 @@
       transform: scale(1.03);
     }
 
-
     footer {
       text-align: center;
       margin-top: 20px;
@@ -156,6 +239,8 @@
 
     @media screen and (max-width: 768px) {
       body { padding: 10px; }
+      .page-wrapper { flex-direction: column; align-items: center; }
+      #sidebar { width: 100%; position: static; }
       #container { width: 100%; padding: 15px; }
       .profile-spotlight { flex-direction: column; align-items: center; }
       .profile-section, .spotlight-section { width: 100%; flex: none; }
@@ -169,107 +254,122 @@
 </head>
 
 <body>
-  <div id="container">
-    <header>
-      <h1>WASSIM DIFALLAH ⋆⭒˚.⋆</h1>
-    </header>
+  <div class="page-wrapper">
+    <nav id="sidebar">
+      <h3>✶ Menu ✶</h3>
+      <a href="index.html">Home</a>
+      <a href="portfolio/">Portfolio</a>
+      <a href="projects/">Organisations/Projects</a>
+      <a href="blog/">Blog</a>
 
-    <div class="section profile-spotlight">
-      <div class="profile-section">
-        <img src="images/wassim.webp" alt="me!" class="profile-pic">
-        <div class="profile-info">
-          <h2>about me ૮ - ﻌ • ა</h2>
-          <p>
-            Hi! I'm Wassim. I am a British/Algerian VFX artist and graphic designer. <br><br>
-            I make music videos, visualisers, cover arts, and short films. Also an amateur guitar player.
-            here u can find my full portfolio, along with some extra stuff like my social media :)
-          </p>
+      <div class="update-board">
+        <h4>Website Update Board</h4>
+        <p><b>Nov 2025:</b> Added sidebar + floating glass design 💫</p>
+      </div>
+    </nav>
+
+    <div id="container">
+      <header>
+        <h1>WASSIM DIFALLAH ⋆⭒˚.⋆</h1>
+      </header>
+
+      <div class="section profile-spotlight">
+        <div class="profile-section">
+          <img src="images/wassim.webp" alt="me!" class="profile-pic">
+          <div class="profile-info">
+            <h2>about me ૮ - ﻌ • ა</h2>
+            <p>
+              Hi! I'm Wassim. I am a British/Algerian VFX artist and graphic designer. <br><br>
+              I make music videos, visualisers, cover arts, and short films. Also an amateur guitar player.
+              here u can find my full portfolio, along with some extra stuff like my social media :)
+            </p>
+          </div>
+        </div>
+
+        <div class="spotlight-section">
+          <h2>most recent work :></h2>
+          <p>hey please go check this out!</p>
+          <iframe src="https://www.youtube.com/embed/SCnWPXLBtg4?si=hEX8ziKz9PvbW8" title="YouTube video player" allowfullscreen></iframe>
         </div>
       </div>
 
-      <div class="spotlight-section">
-        <h2>most recent work :></h2>
-        <p>hey please go check this out!</p>
-        <iframe src="https://www.youtube.com/embed/SCnWPXLBtg4?si=hEX8ziKz9PvbW8" title="YouTube video player" allowfullscreen></iframe>
+      <div class="section social-media-ascii">
+        <div class="social-media">
+          <h2>socials ʚɞ ⁺˖ ⸝⸝</h2>
+          <a href="https://www.youtube.com/@wpssim" target="_blank">youtube</a>
+          <a href="https://www.linkedin.com/in/wassim-difallah-364477384/" target="_blank">linkedin</a>
+          <a href="https://www.instagram.com/wpssim/" target="_blank">instagram</a>
+          <a href="https://www.tiktok.com/@fishingentity" target="_blank">tiktok</a>
+          <br><a href="http://artistsagainstgenocide.org" target="_blank">FUNDRAISING DONATIONS</a>
+          <br><br>email: wassim@friendlycritter.art
+        </div>
+
+        <div class="ascii-art">
+          <p>૮˶• ﻌ •˶ა<br>./づ~ ♡</p>
+          <a href="portfolio/"><b>PORTFOLIO</b></a>
+        </div>
       </div>
+
+      <div class="section gallery" id="gallery">
+        <h2>Gallery 𖤐⭒⋆｡⋆⭒𖤐</h2>
+        <p>Some of these will hyperlink to their corresponding song/albums!</p>
+
+        <div class="gallery-images">
+          <img src="images/aldn.png" alt="aldn">
+          <a href="https://open.spotify.com/album/4bSBCoiEBbuZjwmopMVXXw?si=B1MC72DqQHy5sVomx1xQ2Q" target="_blank">
+            <img src="images/2muchpressure.png" alt="julia wolf - 2muchpressure">
+          </a>
+          <img src="images/ericdoa.png" alt="ericdoa">
+        </div>
+
+        <div class="gallery-images">
+          <img src="images/zombiesgotoheaven.jpg" alt="Zombies Go to Heaven">
+          <img src="images/linoleum.jpg" alt="Linoleum">
+          <img src="images/to see the next part of the dream.jpg" alt="To See the Next Part of the Dream">
+        </div>
+
+        <div class="gallery-images">
+          <img src="images/syzy.jpg" alt="Syzy">
+          <img src="images/angelus.jpg" alt="Angelus">
+          <img src="images/gl0wrm.jpg" alt="gl0wrm">
+        </div>
+
+        <div class="gallery-images">
+          <img src="images/adam.jpg" alt="adam">
+          <img src="images/tyler.png" alt="tyler">
+          <img src="images/catgif.jpg" alt="catgif">
+        </div>
+
+        <div class="gallery-images">
+          <img src="images/xaybee.jpg" alt="xaybee">
+          <img src="images/zjay.jpg" alt="zjay">
+          <img src="images/ray.jpg" alt="ray">
+        </div>
+
+        <div class="gallery-images">
+          <a href="https://open.spotify.com/track/7mLXm7OLtbCLgnAaM56Wi2?si=874fbb2d7312464b" target="_blank">
+            <img src="images/lost.jpg" alt="lost and found">
+          </a>
+          <img src="images/cybertrash.png" alt="cybertrash">
+          <img src="images/kmoe.png" alt="kmoe">
+        </div>
+
+        <div class="gallery-images">
+          <img src="images/post.png" alt="poster girl">
+          <a href="https://open.spotify.com/track/5luvCIjlGAU2ugU760D8dF?si=ac8e26b548af45e2" target="_blank">
+            <img src="images/hearteater.png" alt="hearteater">
+          </a>
+          <img src="images/glaive2.png" alt="glaive">
+        </div>
+
+        <div class="gallery-images">
+          <img src="images/delta.png" alt="delta">
+          <img src="images/megatron.png" alt="megatron">
+        </div>
+      </div>
+
+      <footer id="contact">&copy; friendlycritter.art</footer>
     </div>
-
-    <div class="section social-media-ascii">
-      <div class="social-media">
-        <h2>socials ʚɞ ⁺˖ ⸝⸝</h2>
-        <a href="https://www.youtube.com/@wpssim" target="_blank">youtube</a>
-        <a href="https://www.linkedin.com/in/wassim-difallah-364477384/" target="_blank">linkedin</a>
-        <a href="https://www.instagram.com/wpssim/" target="_blank">instagram</a>
-        <a href="https://www.tiktok.com/@fishingentity" target="_blank">tiktok</a>
-        <br><a href="http://artistsagainstgenocide.org" target="_blank">FUNDRAISING DONATIONS</a>
-        <br><br>email: wassim@friendlycritter.art
-      </div>
-
-      <div class="ascii-art">
-        <p>૮˶• ﻌ •˶ა<br>./づ~ ♡</p>
-        <a href="portfolio/"><b>PORTFOLIO</b></a>
-      </div>
-    </div>
-
-    <div class="section gallery">
-      <h2>Gallery 𖤐⭒⋆｡⋆⭒𖤐</h2>
-      <p>Some of these will hyperlink to their corresponding song/albums!</p>
-
-      <div class="gallery-images">
-        <img src="images/aldn.png" alt="aldn">
-        <a href="https://open.spotify.com/album/4bSBCoiEBbuZjwmopMVXXw?si=B1MC72DqQHy5sVomx1xQ2Q" target="_blank">
-          <img src="images/2muchpressure.png" alt="julia wolf - 2muchpressure">
-        </a>
-        <img src="images/ericdoa.png" alt="ericdoa">
-      </div>
-
-      <div class="gallery-images">
-        <img src="images/zombiesgotoheaven.jpg" alt="Zombies Go to Heaven">
-        <img src="images/linoleum.jpg" alt="Linoleum">
-        <img src="images/to see the next part of the dream.jpg" alt="To See the Next Part of the Dream">
-      </div>
-
-      <div class="gallery-images">
-        <img src="images/syzy.jpg" alt="Syzy">
-        <img src="images/angelus.jpg" alt="Angelus">
-        <img src="images/gl0wrm.jpg" alt="gl0wrm">
-      </div>
-
-      <div class="gallery-images">
-        <img src="images/adam.jpg" alt="adam">
-        <img src="images/tyler.png" alt="tyler">
-        <img src="images/catgif.jpg" alt="catgif">
-      </div>
-
-      <div class="gallery-images">
-        <img src="images/xaybee.jpg" alt="xaybee">
-        <img src="images/zjay.jpg" alt="zjay">
-        <img src="images/ray.jpg" alt="ray">
-      </div>
-
-      <div class="gallery-images">
-        <a href="https://open.spotify.com/track/7mLXm7OLtbCLgnAaM56Wi2?si=874fbb2d7312464b" target="_blank">
-          <img src="images/lost.jpg" alt="lost and found">
-        </a>
-        <img src="images/cybertrash.png" alt="cybertrash">
-        <img src="images/kmoe.png" alt="kmoe">
-      </div>
-
-      <div class="gallery-images">
-        <img src="images/post.png" alt="poster girl">
-        <a href="https://open.spotify.com/track/5luvCIjlGAU2ugU760D8dF?si=ac8e26b548af45e2" target="_blank">
-          <img src="images/hearteater.png" alt="hearteater">
-        </a>
-        <img src="images/glaive2.png" alt="glaive">
-      </div>
-
-      <div class="gallery-images">
-        <img src="images/delta.png" alt="delta">
-        <img src="images/megatron.png" alt="megatron">
-      </div>
-    </div>
-
-    <footer>&copy; friendlycritter.art</footer>
   </div>
 </body>
 </html>

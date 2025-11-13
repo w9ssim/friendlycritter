@@ -3,289 +3,392 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio</title>
+<title>Portfolio ⋆⭒˚.⋆</title>
 
 <link rel="icon" type="image/webp" href="images/3336a903610f1b29cd14aa89afc0f9cc.webp">
 <link rel="icon" type="image/jpg" href="images/3336a903610f1b29cd14aa89afc0f9cc.jpg">
 
 <style>
 html { scroll-behavior: smooth; }
+
 body {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-image: url('https://i.pinimg.com/736x/53/c5/99/53c599ec2cbbdb237f3704d18e55d205.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    animation: fadeIn 0.3s forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('https://i.pinimg.com/736x/53/c5/99/53c599ec2cbbdb237f3704d18e55d205.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
 }
+
 @keyframes fadeIn { to { opacity: 1; } }
 
-#container {
-    width: 90%;
-    max-width: 1040px;
-    background-color: #83a5e0;
-    border: 2px solid #000;
-    padding: 20px;
-    box-sizing: border-box;
-    margin: 40px 0;
+/* Page layout wrapper */
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+  max-width: 1300px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
+
+/* Sidebar styling */
+#sidebar {
+  width: 220px;
+  background: rgba(123, 155, 210, 0.65);
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#sidebar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+#sidebar h3 {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+#sidebar a {
+  display: block;
+  margin: 10px 0;
+  text-decoration: none;
+  color: #4a53ff;
+  font-weight: bold;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+#sidebar a:hover {
+  color: #2f36ff;
+  text-shadow: 0 0 6px rgba(74, 83, 255, 0.6);
+}
+
+/* Update board */
+.update-board {
+  margin-top: 20px;
+  background: rgba(131, 165, 224, 0.55);
+  border: 1px solid #000;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+  backdrop-filter: blur(6px);
+  color: #000;
+}
+
+.update-board h4 {
+  margin-top: 0;
+  font-size: 16px;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  padding-bottom: 5px;
+}
+
+/* Main container */
+#container {
+  flex: 1;
+  max-width: 1040px;
+  background: rgba(131, 165, 224, 0.7);
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+}
+
 header {
-    text-align: center;
-    background-color: #7b9bd2;
-    color: #000;
-    padding: 10px;
-    font-weight: bold;
-    margin-bottom: 20px;
+  text-align: center;
+  background-color: rgba(123, 155, 210, 0.8);
+  color: #000;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  border: 1px solid #000;
 }
 
 .section {
-    border: 1px solid #000;
-    padding: 10px;
-    margin: 20px 0;
-    background-color: #7b9bd2;
+  border: 1px solid #000;
+  padding: 10px;
+  margin: 20px 0;
+  background-color: rgba(123, 155, 210, 0.8);
 }
 
 .video-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
 }
 
 .video-item {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 calc(50% - 20px);
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 calc(50% - 20px);
 }
 
 .video-thumb {
-    position: relative;
-    cursor: pointer;
-    background: #000;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background: #000;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
 }
 
 .video-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: opacity 0.3s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
 }
 
 .video-thumb button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    color: #fff;
-    background: rgba(0,0,0,0.5);
-    border: none;
-    border-radius: 50%;
-    padding: 10px 20px;
-    cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
 .video-thumb iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
 }
 
 .video-caption {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #000;
-    margin-top: 5px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #000;
+  margin-top: 5px;
 }
 
 .instagram-embed {
-    flex: 1 1 calc(50% - 20px);
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    max-width: 100%;
+  flex: 1 1 calc(50% - 20px);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .instagram-embed blockquote {
-    width: 100% !important;
-    height: 100% !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 @media screen and (max-width: 768px) {
-    body { align-items: flex-start; padding: 10px 0; background-attachment: scroll; }
-    #container { width: 100%; height: auto; padding: 10px; margin: 20px 0; border-width: 1px; }
-    .video-container { flex-direction: column; gap: 15px; }
-    .video-item { flex: 1 1 100%; }
-    .instagram-embed { flex: 1 1 100%; }
-    .section { margin: 10px 0; }
+  body { align-items: flex-start; padding: 10px; }
+  .page-wrapper { flex-direction: column; align-items: center; }
+  #sidebar { width: 100%; position: static; }
+  #container { width: 100%; padding: 15px; }
+  .video-container { flex-direction: column; gap: 15px; }
+  .video-item { flex: 1 1 100%; }
+  .instagram-embed { flex: 1 1 100%; }
+  .section { margin: 10px 0; }
 }
 </style>
 </head>
 <body>
 
-<div id="container">
+<div class="page-wrapper">
+
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <h3>Navigation</h3>
+    <a href="../index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="#client-work">Client Work</a>
+    <a href="#personal-projects">Personal Projects</a>
+
+    <div class="update-board">
+      <h4>Website Update Board</h4>
+      <p><b>Nov 2025:</b> Added glass sidebar + unified layout ✦</p>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div id="container">
     <header><h1>PORTFOLIO ✩♬₊˚.</h1></header>
-    
-    <div class="section">
-        <h2>client work ✦</h2>
-        <div class="video-container">
 
-            <div class="video-item">
-                <div class="video-thumb" data-id="XeSTwjLBc_k">
-                    <img src="https://img.youtube.com/vi/XeSTwjLBc_k/hqdefault.jpg" alt="Video Thumbnail">
-                    <button>▶</button>
-                </div>
-                <p class="video-caption">Minh - Gemini [Directed By NX2Photography]<br>VFX/Mixed Media (DaVinci Resolve)</p>
-            </div>
+    <div class="section" id="client-work">
+      <h2>client work ✦</h2>
+      <div class="video-container">
 
-            <div class="video-item">
-                <div class="video-thumb" data-id="SCnWPXLBtg4">
-                    <img src="https://img.youtube.com/vi/SCnWPXLBtg4/hqdefault.jpg" alt="Video Thumbnail">
-                    <button>▶</button>
-                </div>
-                <p class="video-caption">Overtonight - Summer '22 [Directed by NX2Photography]<br>VFX/Mixed Media (DaVinci Resolve)</p>
-            </div>
-
-             <div class="video-item">
-                <div class="video-thumb" data-id="d2ieE_A0sig">
-                    <img src="https://img.youtube.com/vi/d2ieE_A0sig/hqdefault.jpg" alt="Video Thumbnail">
-                    <button>▶</button>
-                </div>
-                <p class="video-caption">Julia Wolf - Last Summer<br>Editor/VFX Artist (After Effects)</p>
-            </div>
-
-            <div class="video-item">
-                <div class="video-thumb" data-id="cKSayjL4vqY">
-                    <img src="https://img.youtube.com/vi/cKSayjL4vqY/hqdefault.jpg" alt="Video Thumbnail">
-                    <button>▶</button>
-                </div>
-                <p class="video-caption">Mercyyy - Comedy<br>Lead Editor/VFX (Datamosh 2, After Effects, Blender)</p>
-            </div>
-            <div class="video-item">
-                <div class="video-thumb" data-id="p0x7S-kqm9k">
-                    <img src="https://img.youtube.com/vi/p0x7S-kqm9k/hqdefault.jpg" alt="Video Thumbnail"> <button></button>
-                </div>
-                <p class="video-caption"> Spirits - C4 <br> 3D Animation/Lighting/Camera/VFX (Maya, Blender) </p>
-                </div>
-            <div class="video-item">
-                <div class="video-thumb" data-id="t5Bk_3xPrOE">
-                    <img src="https://img.youtube.com/vi/t5Bk_3xPrOE/hqdefault.jpg" alt="Video Thumbnail"> <button></button>
-                </div>
-                <p class="video-caption"> Spirits - My Head Rings From the Sirens <br> 3D Animation/Lighting/Camera/VFX (Maya, Blender) </p>
-            </div>
+        <div class="video-item">
+          <div class="video-thumb" data-id="XeSTwjLBc_k">
+            <img src="https://img.youtube.com/vi/XeSTwjLBc_k/hqdefault.jpg" alt="Video Thumbnail">
+            <button>▶</button>
+          </div>
+          <p class="video-caption">Minh - Gemini [Directed By NX2Photography]<br>VFX/Mixed Media (DaVinci Resolve)</p>
         </div>
 
-        <div class="video-container">
-            <div class="instagram-embed" data-url="https://www.instagram.com/reel/DA6Uk9DxKVs/?utm_source=ig_embed"></div>
-            <div class="instagram-embed" data-url="https://www.instagram.com/reel/DBHFhiHRYL8/?utm_source=ig_embed"></div>
+        <div class="video-item">
+          <div class="video-thumb" data-id="SCnWPXLBtg4">
+            <img src="https://img.youtube.com/vi/SCnWPXLBtg4/hqdefault.jpg" alt="Video Thumbnail">
+            <button>▶</button>
+          </div>
+          <p class="video-caption">Overtonight - Summer '22 [Directed by NX2Photography]<br>VFX/Mixed Media (DaVinci Resolve)</p>
         </div>
+
+        <div class="video-item">
+          <div class="video-thumb" data-id="d2ieE_A0sig">
+            <img src="https://img.youtube.com/vi/d2ieE_A0sig/hqdefault.jpg" alt="Video Thumbnail">
+            <button>▶</button>
+          </div>
+          <p class="video-caption">Julia Wolf - Last Summer<br>Editor/VFX Artist (After Effects)</p>
+        </div>
+
+        <div class="video-item">
+          <div class="video-thumb" data-id="cKSayjL4vqY">
+            <img src="https://img.youtube.com/vi/cKSayjL4vqY/hqdefault.jpg" alt="Video Thumbnail">
+            <button>▶</button>
+          </div>
+          <p class="video-caption">Mercyyy - Comedy<br>Lead Editor/VFX (Datamosh 2, After Effects, Blender)</p>
+        </div>
+
+        <div class="video-item">
+          <div class="video-thumb" data-id="p0x7S-kqm9k">
+            <img src="https://img.youtube.com/vi/p0x7S-kqm9k/hqdefault.jpg" alt="Video Thumbnail"> <button></button>
+          </div>
+          <p class="video-caption">Spirits - C4 <br>3D Animation/Lighting/Camera/VFX (Maya, Blender)</p>
+        </div>
+
+        <div class="video-item">
+          <div class="video-thumb" data-id="t5Bk_3xPrOE">
+            <img src="https://img.youtube.com/vi/t5Bk_3xPrOE/hqdefault.jpg" alt="Video Thumbnail"> <button></button>
+          </div>
+          <p class="video-caption">Spirits - My Head Rings From the Sirens <br>3D Animation/Lighting/Camera/VFX (Maya, Blender)</p>
+        </div>
+      </div>
+
+      <div class="video-container">
+        <div class="instagram-embed" data-url="https://www.instagram.com/reel/DA6Uk9DxKVs/?utm_source=ig_embed"></div>
+        <div class="instagram-embed" data-url="https://www.instagram.com/reel/DBHFhiHRYL8/?utm_source=ig_embed"></div>
+      </div>
     </div>
 
     <div class="section">
-        <h2>URLFESTS/CONCERT VISUALS</h2>
-        <div class="video-container">
-            <div class="video-item">
-                <div class="video-thumb" data-id="edzx97fzNDg">
-                    <img src="https://img.youtube.com/vi/edzx97fzNDg/hqdefault.jpg" alt="Video Thumbnail"><button></button>
-                </div>
-                <p class="video-caption">Channel 25 URLFEST - Day 1<br>Graphics/VFX/Live Set Visuals (After Effects, Premiere Pro, DaVinci Resolve, Blender)</p>
-            </div>
-            <div class="video-item">
-                <div class="video-thumb" data-id="jeztuk8G_GE">
-                    <img src="https://img.youtube.com/vi/jeztuk8G_GE/hqdefault.jpg" alt="Video Thumbnail"><button></button>
-                </div>
-                <p class="video-caption">Channel 25 URLFEST - Day 2<br>Graphics/VFX/Live Set Visuals (After Effects, Premiere Pro, DaVinci Resolve, Blender)</p>
-            </div>
+      <h2>URLFESTS/CONCERT VISUALS</h2>
+      <div class="video-container">
+        <div class="video-item">
+          <div class="video-thumb" data-id="edzx97fzNDg">
+            <img src="https://img.youtube.com/vi/edzx97fzNDg/hqdefault.jpg" alt="Video Thumbnail"><button></button>
+          </div>
+          <p class="video-caption">Channel 25 URLFEST - Day 1<br>Graphics/VFX/Live Set Visuals</p>
         </div>
+        <div class="video-item">
+          <div class="video-thumb" data-id="jeztuk8G_GE">
+            <img src="https://img.youtube.com/vi/jeztuk8G_GE/hqdefault.jpg" alt="Video Thumbnail"><button></button>
+          </div>
+          <p class="video-caption">Channel 25 URLFEST - Day 2<br>Graphics/VFX/Live Set Visuals</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="personal-projects">
+      <h2>personal projects ☁︎</h2>
+      <div class="video-container">
+        <div class="video-item">
+          <div class="video-thumb" data-id="BtTgIKe6oH4">
+            <img src="https://img.youtube.com/vi/BtTgIKe6oH4/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
+          </div>
+          <p class="video-caption">Setting Sail - A Short Film by Wassim*</p>
+        </div>
+
+        <div class="video-item">
+          <div class="video-thumb" data-id="Odq5tLtPDXk">
+            <img src="https://img.youtube.com/vi/Odq5tLtPDXk/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
+          </div>
+          <p class="video-caption">Sixteen - A Short Film by Wassim*</p>
+        </div>
+
+        <div class="video-item">
+          <div class="video-thumb" data-id="kTOCtqsrNJg">
+            <img src="https://img.youtube.com/vi/kTOCtqsrNJg/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
+          </div>
+          <p class="video-caption">Ending - A Short Film by Wassim*</p>
+        </div>
+
+        <div class="video-item">
+          <div class="video-thumb" data-id="Jpbkw4Jb3UE">
+            <img src="https://img.youtube.com/vi/Jpbkw4Jb3UE/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
+          </div>
+          <p class="video-caption">University Storyboard Project</p>
+        </div>
+      </div>
     </div>
 
     <div class="section">
-        <h2>personal projects ☁︎</h2>
-        <div class="video-container">
-            <div class="video-item">
-                <div class="video-thumb" data-id="BtTgIKe6oH4">
-                    <img src="https://img.youtube.com/vi/BtTgIKe6oH4/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
-                </div>
-                <p class="video-caption">Setting Sail - A Short Film by Wassim*<br>Director/Actor/Storyboard/Editor/Grading (DaVinci Resolve, Premiere Pro, Blender, After Effects)</p>
-            </div>
-
-            <div class="video-item">
-                <div class="video-thumb" data-id="Odq5tLtPDXk">
-                    <img src="https://img.youtube.com/vi/Odq5tLtPDXk/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
-                </div>
-                <p class="video-caption">Sixteen - A Short Film by Wassim*<br>Director/Actor/Editor/Grading (Premiere Pro)</p>
-            </div>
-
-            <div class="video-item">
-                <div class="video-thumb" data-id="kTOCtqsrNJg">
-                    <img src="https://img.youtube.com/vi/kTOCtqsrNJg/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
-                </div>
-                <p class="video-caption">Ending - A Short Film by Wassim*<br>Storyboard/Director/Actor/Editor/Sound Design/Compositing (After Effects, Nuke, DaVinci Resolve)</p>
-            </div>
-
-            <div class="video-item">
-                <div class="video-thumb" data-id="Jpbkw4Jb3UE">
-                    <img src="https://img.youtube.com/vi/Jpbkw4Jb3UE/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
-                </div>
-                <p class="video-caption">University Storyboard Project<br>Storyboard/Sound Design/Editor/VFX (After Effects, FL Studio, Logic Pro, Nuke)</p>
-            </div>
+      <h2>practice ♡</h2>
+      <div class="video-container">
+        <div class="video-item">
+          <div class="video-thumb" data-id="W0MfcbnqJ6c">
+            <img src="https://img.youtube.com/vi/W0MfcbnqJ6c/hqdefault.jpg" alt="Video Thumbnail"><button></button>
+          </div>
+          <p class="video-caption">Nuke Parallax 3D Camera Practice</p>
         </div>
+        <div class="video-item">
+          <div class="video-thumb" data-id="oxX3r0MXoHU">
+            <img src="https://img.youtube.com/vi/oxX3r0MXoHU/hqdefault.jpg" alt="Video Thumbnail"><button></button>
+          </div>
+          <p class="video-caption">Maya 3D Animation Practice</p>
+        </div>
+        <div class="video-item">
+          <div class="video-thumb" data-id="MZumIOJzseg">
+            <img src="https://img.youtube.com/vi/MZumIOJzseg/hqdefault.jpg" alt="Video Thumbnail"><button></button>
+          </div>
+          <p class="video-caption">Storyboard/Animatic Work</p>
+        </div>
+        <div class="video-item">
+          <div class="video-thumb" data-id="jU_VXxyQY9s">
+            <img src="https://img.youtube.com/vi/jU_VXxyQY9s/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
+          </div>
+          <p class="video-caption">Mixed Media Practice 1</p>
+        </div>
+        <div class="video-item">
+          <div class="video-thumb" data-id="fQbPsBAEP34">
+            <img src="https://img.youtube.com/vi/fQbPsBAEP34/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
+          </div>
+          <p class="video-caption">Mixed Media Practice 2</p>
+        </div>
+        <div class="video-item">
+          <div class="video-thumb" data-id="ffqGF-AGiCE">
+            <img src="https://img.youtube.com/vi/ffqGF-AGiCE/hqdefault.jpg" alt="Video Thumbnail"><button></button>
+          </div>
+          <p class="video-caption">Mixed Media Practice 3</p>
+        </div>
+      </div>
     </div>
 
-    <div class="section">
-        <h2>practice ♡</h2>
-        <div class="video-container">
-            <div class="video-item">
-                <div class="video-thumb" data-id="W0MfcbnqJ6c">
-                    <img src="https://img.youtube.com/vi/W0MfcbnqJ6c/hqdefault.jpg" alt="Video Thumbnail"><button></button>
-                </div>
-                <p class="video-caption">Nuke Parallax 3D Camera Practice</p>
-            </div>
-            <div class="video-item">
-                <div class="video-thumb" data-id="oxX3r0MXoHU">
-                    <img src="https://img.youtube.com/vi/oxX3r0MXoHU/hqdefault.jpg" alt="Video Thumbnail"><button></button>
-                </div>
-                <p class="video-caption">Maya 3D Animation Practice<br>Modelling/UV Unwrap/Animation</p>
-            </div>
-            <div class="video-item">
-                <div class="video-thumb" data-id="MZumIOJzseg">
-                    <img src="https://img.youtube.com/vi/MZumIOJzseg/hqdefault.jpg" alt="Video Thumbnail"><button></button>
-                </div>
-                <p class="video-caption"> Storyboard/Animatic Work <br> Pre-Production for <a href="https://youtu.be/Jpbkw4Jb3UE" target="_blank">this!</a></p>
-            </div>
-            <div class="video-item">
-                <div class="video-thumb" data-id="jU_VXxyQY9s">
-                    <img src="https://img.youtube.com/vi/jU_VXxyQY9s/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
-                </div>
-                <p class="video-caption">Mixed Media Practice 1</p>
-            </div>
-            <div class="video-item">
-                <div class="video-thumb" data-id="fQbPsBAEP34">
-                    <img src="https://img.youtube.com/vi/fQbPsBAEP34/hqdefault.jpg" alt="Video Thumbnail"><button>▶</button>
-                </div>
-                <p class="video-caption">Mixed Media Practice 2</p>
-            </div>
-            <div class="video-item">
-                <div class="video-thumb" data-id="ffqGF-AGiCE">
-                    <img src="https://img.youtube.com/vi/ffqGF-AGiCE/hqdefault.jpg" alt="Video Thumbnail"><button></button>
-                </div>
-                <p class="video-caption">Mixed Media Practice 3</p>
-            </div>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>
 
 <script defer src="//www.instagram.com/embed.js"></script>
@@ -303,10 +406,8 @@ document.querySelectorAll('.video-thumb').forEach(thumb => {
     iframe.style.left = 0;
     iframe.style.width = '100%';
     iframe.style.height = '100%';
-
     const img = thumb.querySelector('img');
     if (img) img.style.opacity = '0';
-
     thumb.querySelector('button')?.remove();
     thumb.appendChild(iframe);
   });
@@ -320,10 +421,7 @@ document.querySelectorAll('.instagram-embed').forEach(div => {
   blockquote.dataset.instgrmPermalink = url;
   div.appendChild(blockquote);
 });
-
-if (window.instgrm) {
-  window.instgrm.Embeds.process();
-}
+if (window.instgrm) window.instgrm.Embeds.process();
 </script>
 
 </body>
