@@ -125,8 +125,7 @@
       font-weight: bold;
       border: 1px solid #000;
       margin-bottom: 20px;
-    }
-
+    
     .project {
       display: flex;
       align-items: center;
@@ -148,7 +147,17 @@
     .project-content {
       flex: 1;
     }
+    
+    }
+    .project a img {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
 
+    .project a:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    }
+      
     .project-content h2 {
       margin-top: 0;
       margin-bottom: 10px;
