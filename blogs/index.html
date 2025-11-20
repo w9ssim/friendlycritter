@@ -34,6 +34,18 @@
       width: 100%;
     }
 
+    .fancy-link {
+      color: #4a53ff;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.2s ease, text-shadow 0.2s ease;
+    }
+
+    .fancy-link:hover {
+      color: #2f36ff;
+      text-shadow: 0 0 6px rgba(74, 83, 255, 0.6);
+    }
+
     #sidebar {
       width: 220px;
       background: rgba(123, 155, 210, 0.65);
@@ -61,16 +73,14 @@
       color: #000;
     }
 
-    #sidebar a {
-      display: block;
-      margin: 10px 0;
-      text-decoration: none;
+    #container a {
       color: #4a53ff;
       font-weight: bold;
+      text-decoration: none;
       transition: color 0.2s ease, text-shadow 0.2s ease;
     }
 
-    #sidebar a:hover {
+    #container a:hover {
       color: #2f36ff;
       text-shadow: 0 0 6px rgba(74, 83, 255, 0.6);
     }
@@ -195,10 +205,10 @@
   <div class="page-wrapper">
     <nav id="sidebar">
       <h3>✶ Menu ✶</h3>
-      <a href="https://friendlycritter.art/">Home</a>
-      <a href="/portfolio/">Portfolio</a>
-      <a href="/blogs/">Blog</a>
-      <a href="/projects/">Organisations/Projects</a>
+      <a class="fancy-link" href="https://friendlycritter.art/">Home</a>
+      <a class="fancy-link" href="/portfolio/">Portfolio</a>
+      <a class="fancy-link" href="/blogs/">Blog</a>
+      <a class="fancy-link" href="/projects/">Organisations/Projects</a>
 
       <div class="update-board">
         <h4>Currently Working On:</h4>
@@ -219,7 +229,7 @@
           <p>
             My week has been a literal hell so far. I've been caught up with like a billion different projects and to be honest I kinda miss having free time to just goof about LOL. <br><br>
             I recently started working at Hamleys part time as a sales assistant, and honestly it's a bunch of fun! My manager and coworkers are all really nice and kind and awesome, and I'm super grateful to finally get a job somewhere, because I feel like working retail should be a rite of passage to just learn how to interact with the rest of society. I've felt like I just stopped existing between 2020 and 2024, and this year has been all about trying to find myself again. <br><br>
-            I also have been doing a bunch of commissions, and I went back to the green screen studio today :) I recently did some additional vfx work for Nx2Photography and Bunii, and I genuinely feel as though it's the best thing I've made thus far. I <b>NEED</b> this video to drop ASAP because it looks so cool and I wanna share it with the world
+            I also have been doing a bunch of commissions, and I went back to the green screen studio today :) I recently did some additional vfx work for <a class="fancy-link" href="https://www.instagram.com/nx2photography/" target="_blank">NX2Photography</a> and <a class="fancy-link" href="https://open.spotify.com/artist/6mx3Y8XNLPaS2pjJbQFq3W?si=1kDPTwmaTPmfQIVWzP805A" target="_blank">Bunii</a>, and I genuinely feel as though it's the best thing I've made thus far. I <b>NEED</b> this video to drop ASAP because it looks so cool and I wanna share it with the world
           </p>
         </div>
 
