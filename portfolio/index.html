@@ -39,6 +39,18 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: #4a53ff;
+  font-weight: bold;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+a:hover {
+  color: #2f36ff;
+  text-shadow: 0 0 6px rgba(74, 83, 255, 0.6);
+}
+
 #sidebar {
   width: 220px;
   background: rgba(123, 155, 210, 0.65);
@@ -69,15 +81,6 @@ body {
 #sidebar a {
   display: block;
   margin: 10px 0;
-  text-decoration: none;
-  color: #4a53ff;
-  font-weight: bold;
-  transition: color 0.2s ease, text-shadow 0.2s ease;
-}
-
-#sidebar a:hover {
-  color: #2f36ff;
-  text-shadow: 0 0 6px rgba(74, 83, 255, 0.6);
 }
 
 .update-board {
