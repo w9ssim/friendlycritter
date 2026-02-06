@@ -131,16 +131,14 @@ header {
 }
 
 .video-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  justify-content: space-between;
 }
 
 .video-item {
   display: flex;
   flex-direction: column;
-  flex: 1 1 calc(50% - 20px);
 }
 
 .video-thumb {
@@ -207,7 +205,7 @@ header {
   .page-wrapper { flex-direction: column; align-items: center; }
   #sidebar { width: 100%; position: static; }
   #container { width: 100%; padding: 15px; }
-  .video-container { flex-direction: column; gap: 15px; }
+  .video-container { grid-template-columns: 1fr; }
   .video-item { flex: 1 1 100%; }
   .instagram-embed { flex: 1 1 100%; }
   .section { margin: 10px 0; }
@@ -358,8 +356,8 @@ header {
         <div class="video-item">
           <div class ="video-thumb" data-id="GN3ULYfykEA">
             <img src="https://img.youtube.com/vi/GN3ULYfykEA/hqdefault.jpg" alt="Video Thumbnail"><button></button>
+            <p class="video-caption">Bunii - Selah (Scrap)</p>
           </div>
-          <p class="video-caption">Bunii - Selah (Scrap)</p>
         <div class="video-item">
           <div class="video-thumb" data-id="W0MfcbnqJ6c">
             <img src="https://img.youtube.com/vi/W0MfcbnqJ6c/hqdefault.jpg" alt="Video Thumbnail"><button></button>
